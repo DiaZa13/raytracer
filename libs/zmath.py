@@ -9,10 +9,13 @@ V4 = namedtuple('Point4', ['x', 'y', 'z', 'w'])
 def subtract(v1, v2):
     result = []
 
-    if isinstance(v2, (float, int)):
+    if isinstance(v1, (float, int)):
+        for i in range(len(v2)):
+            result.append(v1 - v2[i])
+    elif isinstance(v2, (float, int)):
         for i in range(len(v1)):
             result.append(v1[i] - v1)
-    if len(v1) == len(v2):
+    elif len(v1) == len(v2):
         for i in range(len(v1)):
             result.append(v1[i] - v2[i])
     else:
@@ -48,6 +51,20 @@ def multiply(a, b):
     elif len(a) == len(b):
         for i in range(len(a)):
             result.append(a[i] * b[i])
+    else:
+        return
+
+    return result
+
+def divide(a, b):
+    result = []
+
+    if isinstance(a, (float, int)):
+        for i in range(len(b)):
+            result.append(a / b[i])
+    elif len(a) == len(b):
+        for i in range(len(a)):
+            result.append(a[i] / b[i])
     else:
         return
 

@@ -127,6 +127,6 @@ class EnvMap(object):
     def getColor(self, direction):
         direction = normalize(direction)
         x = int((arctan2(direction[2], direction[0]) / (2 * pi()) + 0.5) * self.width)
-        y = int(arccos(-direction[1]) / pi() * self.height)
+        y = int(arccos(-direction[1]) / (pi()) * self.height)
 
         return self.pixels[y][x]

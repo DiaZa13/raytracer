@@ -38,7 +38,7 @@ class Material(object):
 
     def textureColor(self):
         if self.texture and self.intersect.textCoords:
-            textColor = self.texture.getColor()
+            textColor = self.texture.getColor(self.intersect.textCoords[0], self.intersect.textCoords[1])
             textColor = [textColor[2] / 255,
                          textColor[1] / 255,
                          textColor[0] / 255]

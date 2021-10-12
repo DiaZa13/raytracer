@@ -8,7 +8,7 @@ class Opaque(Material):
     def __init__(self, diffuse=zu.WHITE, spec=1, texture=None):
         super().__init__(diffuse, spec, texture)
 
-    def getColor(self, **kwargs):
+    def getColor(self, direction, recursion):
         intensity = [0, 0, 0]
 
         if self.ambientLight:
